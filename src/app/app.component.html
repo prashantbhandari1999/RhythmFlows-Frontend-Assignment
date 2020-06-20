@@ -1,0 +1,78 @@
+<!-- <div>
+  <h1>
+    Customers Details :
+  </h1>
+  <ul>
+    <table>
+    <li *ngFor="let d of data">
+      <tr>
+        <th>{{d.id}}</th>
+        <th>{{d.name}}</th>
+        <th>{{d.age}}</th>
+        <th>{{d.address}}</th>
+        <th>{{d.email}}</th>
+      </tr>
+    </li>
+  </table>
+  </ul>
+</div>
+<input #Name type='text' placeholder='Name'>
+<input #Age type='number' placeholder='Age'>
+<input #Address type='text' placeholder='Address'>
+<input #Email type='text' placeholder='Email'>
+<button (click)="add(Name.value,Age.value,Address.value,Email.value)">ADD</button>
+{{ errors?.message }} -->
+<div class="col-md-12">  
+  <h2> Customers Details</h2>  
+  <div class="table-responsive table-container">  
+    <table class="table" border="20px">  
+      <thead>  
+        <tr>  
+          <th>Id</th>  
+          <th>Name</th>  
+          <th>Age</th>  
+          <th>Address</th>  
+          <th>Email</th>
+          <th>Delete</th>
+        </tr>  
+      </thead>  
+      <tbody>  
+        <tr *ngFor="let d of data">  
+          <td class="hidden">{{d.id}}</td>  
+          <td>{{d.name}}</td>  
+          <td>{{d.age}}</td>  
+          <td>{{d.address}}</td>
+          <td>{{d.email}}</td>  
+          <td>  
+            <button (click)="delete(d.id)" class="btn btn-info"> Delete</button>  
+          </td>  
+        </tr>  
+      </tbody>  
+    </table>  
+  </div>  
+</div>
+<h2>
+  Add Customer
+</h2>  
+<div>
+  <input #Name type='text' placeholder='Name'>
+  <input #Age type='number' placeholder='Age'>
+  <input #Address type='text' placeholder='Address'>
+  <input #Email type='text' placeholder='Email'>
+  <button (click)="add(Name.value,Age.value,Address.value,Email.value)">ADD</button>
+</div>
+<h2>
+  Update
+</h2>
+<h3>
+  Enter Name of customer:
+  <input #name type="text" placeholder="Name">
+  <button (click)="search(name.value)">Search</button>
+</h3>
+<div *ngFor="let s of selected_data" [hidden]="isHidden">
+  <input #Name type='text' placeholder='Name' value="{{s.name}}">
+  <input #Age type='number' placeholder='Age' value="{{s.age}}">
+  <input #Address type='text' placeholder='Address' value="{{s.address}}">
+  <input #Email type='text' placeholder='Email' value="{{s.email}}">
+  <button (click)="update(s.id,Name.value,Age.value,Address.value,Email.value)">Update</button>
+</div>
