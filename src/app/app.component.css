@@ -1,0 +1,19 @@
+.heading {
+    color: blue;
+    text-decoration: underline;
+  }
+.text {
+    background-color: grey;
+    color: white;
+}
+.tableheading {
+    color: green;
+}
+.button {
+    color: white;
+    background-color: green;
+}
+::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
